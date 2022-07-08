@@ -1,0 +1,55 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+  <main class="profile-page layout layout--3">
+    <div class="container">
+      <!-- Topics Start -->
+      {% include 'base/topics_component.html' %}
+      <!-- Topics End -->
+
+      <!-- Room List Start -->
+      <div class="roomList">
+        <div class="profile">
+          <div class="profile__avatar">
+            <div class="avatar avatar--large 
+            {% if user.is_online %}
+            active
+            {% endif %}">
+              <img src="{{ user.avatar.url }}" />
+            </div>
+          </div>
+          <div class="profile__info">
+            <h3>{{ user.name }}</h3>
+            <p>@{{ user.username }}</p>
+            {% if not user.is_online %}
+            <p>last seen {{user.last_login|timesince}} ago</p>
+            {% endif %}
+            {% if request.user == user %}
+            <a href="{% url 'update-user' %}" class="btn btn--main btn--pill">Edit Profile</a>
+            {% endif %}
+          </div>
+          <div class="profile__about">
+            <h3>About</h3>
+            <p>
+              {{user.bio}}Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur illo tenetur
+              facilis sunt nemo debitis quisquam hic atque aut? Ducimus alias placeat optio
+              accusamus repudiandae quis ab ex exercitationem rem?
+            </p>
+          </div>
+        </div>
+
+        {% include 'base/feed_component.html' %}
+
+      </div>
+      <!-- Room List End -->
+
+      <!-- Activities Start -->
+
+      {% include 'base/activity_component.html' %}
+
+      <!-- Activities End -->
+    </div>
+  </main>
+  {% endblock content %}
