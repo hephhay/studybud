@@ -13,6 +13,9 @@ class User(AbstractUser):
     email = models.EmailField(unique=True, null=True)
     bio = models.TextField(null=True)
 
+    first_name = models.CharField(null=True, max_length=1)
+    last_name= models.CharField(null=True, max_length=1)
+
     avatar = models.ImageField(null=True, default="avatar.svg")
 
     login_count = models.BigIntegerField(default=0)

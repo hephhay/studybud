@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
         
 
     dependencies = [
-        ('base', '0008_user_login_count'),
+        ('base', '0009_alter_user_first_name_alter_user_last_name'),
     ]
 
     operations = [
