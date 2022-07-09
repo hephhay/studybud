@@ -154,6 +154,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+CSRF_TRUSTED_ORIGINS = ["https://studybud-social.herokuapp.com"]
+
 SESSION_COOKIE_AGE = 300
 
 LAST_ACTIVITY_INTERVAL_SECS = 300
