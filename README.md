@@ -9,5 +9,6 @@
 # Django Social Media App
 
 This is very simple social media app with built with Django
+You can check it out [here](https://studybud-social.herokuapp.com)
 
 ## Screeshots
